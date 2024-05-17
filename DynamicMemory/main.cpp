@@ -1,27 +1,40 @@
-#include<iostream>
+Ôªø#include<iostream>
 using namespace std;
 
 #define tab "\t"
+
+void FillRand(int arr[], const int n);
+void Print (int arr[], const int n);
 
 void main()
 {
 	setlocale(LC_ALL, "");
 	 //     new
 	int n = 5;
-	cout << "¬‚Â‰ËÚÂ ‡ÁÏÂ Ï‡ÒÒË‚‡: "; cin >> n;
+	cout << "–í–≤–µ–¥–∏—Ç–µ —Ä–∞–∑–º–µ—Ä –º–∞—Å—Å–∏–≤–∞: "; cin >> n;
 	int* arr = new int[n];
+
+	FillRand(arr, n);
+	Print(arr, n);
+
+	delete[]arr;
+	//Memory Leaks - —É—Ç–µ—á–∫–∞ –ø–∞–º—è—Ç–∏; 	 
+}
+
+void FillRand(int arr[], const int n)
+{
 	for (int i = 0; i < n; i++)
 	{
 		*(arr + i) = rand() % 100;
-		//Œ·‡¯ÂÌËÂ Í ˝ÎÂÏÂÌÚ‡Ï Ï‡ÒÒË‚‡ ˜ÂÂÁ ‡ËÙÏÂÚËÍÛ Ë ÓÔÂ‡ÚÓ‡ ‡Á˚ÏÂÌÓ‚‡ÌËˇ 
+		//–û–±—Ä–∞—à–µ–Ω–∏–µ –∫ —ç–ª–µ–º–µ–Ω—Ç–∞–º –º–∞—Å—Å–∏–≤–∞ —á–µ—Ä–µ–∑ –∞—Ä–∏—Ñ–º–µ—Ç–∏–∫—É —É–∫–∞–∑–∞—Ç–µ–ª–µ–π –∏ –æ–ø–µ—Ä–∞—Ç–æ—Ä —Ä–∞–∑—ã–º–µ–Ω–æ–≤–∞–Ω–∏—è
 	}
+}
+void Print(int arr[], const int n)
+{
 	for (int i = 0; i < n; i++)
 	{
 		cout << arr[i] << tab;
-		//Œ·‡¯ÂÌËÂ Í ˝ÎÂÏÂÌÚ‡Ï Ï‡ÒÒË‚‡ ˜ÂÂÁ ÓÔÂ‡ÚÓ ËÌ‰ÂÍÒËÓ‚‡ÌËÂ [] 
-   	}
+		//–û–±—Ä–∞—à–µ–Ω–∏–µ –∫ —ç–ª–µ–º–µ–Ω—Ç–∞–º –º–∞—Å—Å–∏–≤–∞ —á–µ—Ä–µ–∑ –æ–ø–µ—Ä–∞—Ç–æ—Ä –∏–Ω–¥–µ–∫—Å–∏—Ä–æ–≤–∞–Ω–∏—è []  
+	}
 	cout << endl;
-	delete[]arr;
-	//Memory Leaks - ÛÚÂ˜Í‡ Ô‡ÏˇÚË; 
-
 }
